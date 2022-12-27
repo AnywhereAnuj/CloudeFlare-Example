@@ -1,0 +1,33 @@
+settings:
+  title: 'AB Status Page'
+  url: 'https://status-page.eidam.dev' # used for Slack messages
+  logo: logo-192x192.png # image in ./public/ folder
+  daysInHistogram: 60 # number of days you want to display in histogram
+  collectResponseTimes: true # collects avg response times from CRON locations
+
+  allmonitorsOperational: 'All Systems Operational'
+  notAllmonitorsOperational: 'Not All Systems Operational'
+  monitorLabelOperational: 'Operational'
+  monitorLabelNotOperational: 'Not Operational'
+  monitorLabelNoData: 'No data'
+  dayInHistogramNoData: 'No data'
+  dayInHistogramOperational: 'All good'
+  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+
+monitors:
+  - id: google # unique identifier
+    name: Google Home Page
+    description: 'Home Page of Google' # default=empty
+    url: 'https://google.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    # linkable: false # allows the title to be a link, default=true
+
+ - id: bing # unique identifier
+    name: Bing Home Page
+    description: 'Home Page of Bing' # default=empty
+    url: 'https://bing.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
